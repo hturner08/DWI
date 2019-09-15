@@ -15,6 +15,7 @@ package com.example.dwi;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -26,14 +27,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.DialogFragment;
 import android.widget.Toast;
 
-import android.Manifest;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-import android.content.pm.PackageManager;
-import android.os.Bundle;
-import android.widget.Toast;
-
+import com.example.dwi.R;
 /**
  * Utility class for access to runtime permissions.
  */
@@ -106,7 +100,7 @@ public abstract class PermissionUtils {
         public void onDismiss(DialogInterface dialog) {
             super.onDismiss(dialog);
             if (mFinishActivity) {
-                Toast.makeText(getActivity(), R.string.permission_required_toast,
+                Toast.makeText(getActivity(), R.string.cut,
                         Toast.LENGTH_SHORT).show();
                 getActivity().finish();
             }
@@ -133,7 +127,6 @@ public abstract class PermissionUtils {
          *
          * @param requestCode    Id of the request that is used to request the permission. It is
          *                       returned to the
-         *                       {@link android.support.v4.app.ActivityCompat.OnRequestPermissionsResultCallback}.
          * @param finishActivity Whether the calling Activity should be finished if the dialog is
          *                       cancelled.
          */
